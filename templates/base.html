@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}  {% endblock %}</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <link rel="stylesheet" href="{% static 'css/foundation.css' %}">
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+    <header>
+
+        <div class="top-bar">
+            <div class="large-12 cell">
+                <div class="grid-container">
+                    <div class="grid-x grid-padding-x">
+                        <div class="top-bar-left">
+                            <ul class="dropdown menu" data-dropdown-menu>
+                                <li class="menu-text">Checker-19</li>
+                            </ul>
+                        </div> 
+                        <div class="top-bar-right">
+                            <ul class="menu">
+                                <li class="{% if request.resolver_match.url_name == 'home' %}is-active{% endif %}">
+                                    <a href="{% url 'home' %}">Visita</a>
+                                </li>
+                                <li class="{% if request.resolver_match.url_name == 'aboutme' %}is-active{% endif %}">
+                                    <a href="{% url 'aboutme' %}">Empleados</a>
+                                </li>
+                                <li class="{% if request.resolver_match.url_name == 'servicios' %}is-active{% endif %}">
+                                    <a href="{% url 'servicios' %}">Departamentos</a>
+                                </li>
+                                <li class="{% if request.resolver_match.url_name == 'contact' %}is-active{% endif %}">
+                                    <a href="{% url 'contact' %}">Actividad por Empleado</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>     
+            </div>
+        </div>          
+    </header>
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="large-12 cell">
+            {% block content %}
+                
+            {% endblock %}
+            </div>
+        </div>
+    </div> 
+
+
+    
+    <script style="{% static 'js/foundation.js' %}"></script>
+</body>
+</html>

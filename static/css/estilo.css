@@ -1,0 +1,14 @@
+header .menu_principal{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+header .menu_principal li{
+	list-style: none;
+}
+header .menu_principal li a{
+	padding: 10px 20px;
+}
