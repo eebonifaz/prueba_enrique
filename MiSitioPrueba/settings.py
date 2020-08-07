@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'docentes',
 ]
 
 MIDDLEWARE = [
@@ -74,10 +75,19 @@ WSGI_APPLICATION = 'MiSitioPrueba.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+##    'default': {
+##        'ENGINE': 'django.db.backends.sqlite3',
+##        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+##    } 
+        'default': {
+            'ENGINE': 'django.db.backends.mysql', 
+            'NAME': 'primer_proy_django',
+            'USER': 'root',
+            'PASSWORD': 'root',
+            'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+            'PORT': '3306',
+        } 
+
 }
 
 
