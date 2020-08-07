@@ -2,3 +2,7 @@ venv
 .phpintel
 db.sqlite3
 .idea
+
+
+__pycache__
+migrations
