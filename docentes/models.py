@@ -15,3 +15,5 @@ class Docentes( models.Model ):
 
 	def __str__( self ):
 		return '{0}.{1}'.format(self.apellido, self.nombre)
+		verbose_name = "Docente"
+		verbose_name_plural = "Docentes"

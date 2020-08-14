@@ -16,11 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core import views
-
+from docentes import views as viewdocentes
+ 
 urlpatterns = [
     path('', views.home, name="home"),
     path('about-me/', views.aboutme, name="aboutme"),
     path('contact/', views.contact, name="contact"),
     path('portafolio/', views.portafolio, name="portafolio"),
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+
+    path('docente', viewdocentes.docente, name="docente"),
+    path('docente/crear', viewdocentes.creardocente, name="creardocente"),
+    path('docente/modificar', viewdocentes.modificardocente, name="modificardocente"),
+    path('docente/eliminar', viewdocentes.eliminardocente, name="eliminardocente"),
+    path('docente/editar', viewdocentes.editardocente, name="editardocente"),
 ]
